@@ -1,0 +1,52 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow: hidden;
+    background: #000;
+}
+
+span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 15px;
+    height: 5px;
+    background: #76f8ff;
+    filter: drop-shadow(0 0 20px #03e9f4);
+    box-shadow: 0 0 0 4px rgba(#03e8f493),
+        0 0 0 4px rgba(#03e8f480),
+        0 0 0 2px rgba(#03e8f4d1),
+        0 0 0 2px rgba(#03e8f4d1), ;
+
+    animation: animates 3s linear forwards;
+    animation-iteration-count: infinite;
+}
+
+span::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 300px;
+    height: 1px;
+    background: linear-gradient(8deg, #03e9f4, transparent);
+}
+
+
+@keyframes animate {
+    0% {
+        transform: translateX(0);
+    }
+
+    10% {
+        transform: translateX(-500px) translateZ(10deg);
+    }
+
+    100% {
+        transform: translateX(-1000px);
+    }
+}
